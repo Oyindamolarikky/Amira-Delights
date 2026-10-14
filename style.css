@@ -1,0 +1,1063 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fffaf5;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #59382b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+nav h1 {
+    font-size: 30px;
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.hero {
+    min-height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    gap: 50px;
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.hero h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 25px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #8b4513;
+    color: white;
+}
+
+.hero a:hover{
+    background-color: #5c2e0b;
+}
+
+.hero-image {
+    width: 45%;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.featured-cakes {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.featured-cakes > h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.cake-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.cake-card {
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cake-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.cake-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.cake-card h3 {
+    margin: 20px 0 10px;
+    font-size: 22px;
+}
+
+.cake-card p {
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.cake-card span {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.cake-card button {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #8b4513;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.cake-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.cake-card:hover .cake-image img {
+    transform: scale(1.08);
+}
+
+.cake-card button:hover {
+    background-color: #5c2e0b;
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .cake-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.cart-section {
+    background-color: #fff8f3;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 400px;
+    max-width: 100%;
+    height: 100vh;
+    background: #fffaf5;
+    padding: 25px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: right 0.3s ease;
+    text-align: left;
+}
+
+.cart-section h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+#cart-items {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    margin-bottom: 25px;
+}
+
+#cart-items p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.remove-btn {
+    background-color: #b22222;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#checkout-btn {
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+#checkout-btn:hover {
+    background-color: #5c2e0b;
+}
+
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.cart-section.active {
+    right: 0;
+}
+
+.cart-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.cart-header h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+#close-cart {
+    display: block;
+    margin-left: auto;
+    border: none;
+    background: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+body.cart-open {
+    overflow: hidden;
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+    margin-bottom: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.cart-item p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+.cart-item strong {
+    font-size: 17px;
+    color: #5a3025;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.quantity-controls span {
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+.quantity-btn {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    background: #f2d5ca;
+    color: #5a3025;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quantity-btn:hover {
+    background: #d99b85;
+    color: white;
+}
+
+.remove-btn {
+    border: none;
+    background: #fff0ed;
+    color: #b33a3a;
+    padding: 9px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    background: #b33a3a;
+    color: white;
+}
+
+.checkout-header {
+    text-align: center;
+    padding: 35px 20px;
+    background: #5a3025;
+    color: white;
+}
+
+.checkout-header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.checkout-header p {
+    font-size: 16px;
+    color: #f5dcd2;
+}
+
+.checkout-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 25px;
+    align-items: start;
+}
+
+.order-summary,
+.customer-details {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.order-summary h2,
+.customer-details h2 {
+    color: #5a3025;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+#checkout-items > div {
+    padding: 15px 0;
+    border-bottom: 1px solid #eadbd5;
+}
+
+#checkout-items p {
+    line-height: 1.8;
+    color: #59443d;
+}
+
+.order-summary h3 {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #eadbd5;
+    color: #5a3025;
+    font-size: 22px;
+}
+
+#checkout-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#checkout-form label {
+    margin-bottom: 8px;
+    color: #5a3025;
+    font-weight: bold;
+}
+
+#checkout-form input,
+#checkout-form textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 20px;
+    border: 1px solid #ddc8be;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-family: inherit;
+    background: #fffaf7;
+    outline: none;
+}
+
+#checkout-form input:focus,
+#checkout-form textarea:focus {
+    border-color: #b87560;
+    box-shadow: 0 0 0 3px rgba(184, 117, 96, 0.12);
+}
+
+#checkout-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+#place-order-btn {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #8b5140;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#place-order-btn:hover {
+    background: #5a3025;
+}
+
+@media (max-width: 768px) {
+    .checkout-container {
+        grid-template-columns: 1fr;
+        margin: 25px auto;
+        padding: 0 15px;
+        gap: 20px;
+    }
+
+    .checkout-header h1 {
+        font-size: 26px;
+    }
+
+    .order-summary,
+    .customer-details {
+        padding: 22px;
+    }
+}
+
+.cakes-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: #5a3025;
+    color: white;
+}
+
+.cakes-nav h1 {
+    font-size: 26px;
+}
+
+.cakes-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+.cakes-nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.cakes-nav a:hover,
+.cakes-nav a.active {
+    color: #f2c6b6;
+}
+
+/* Page Heading */
+
+.cakes-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: #fff0e9;
+}
+
+.cakes-hero h2 {
+    font-size: 38px;
+    color: #5a3025;
+    margin-bottom: 15px;
+}
+
+.cakes-hero p {
+    font-size: 17px;
+    color: #795548;
+}
+
+.cakes-page {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 25px;
+}
+
+.cakes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 22px;
+}
+
+.product-info h3 {
+    font-size: 21px;
+    color: #5a3025;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    color: #795548;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #8b5140;
+    margin-bottom: 18px;
+}
+
+/* Add to Cart Button */
+
+.product-card .add-to-cart {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #8b5140;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.product-card .add-to-cart:hover {
+    background: #5a3025;
+}
+
+@media (max-width: 900px) {
+    .cakes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cakes-nav ul {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cakes-nav {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .cakes-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
+
+    .cakes-hero h2 {
+        font-size: 29px;
+    }
+
+    .cakes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card img {
+        height: 250px;
+    }
+}
+
+#cart {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 400px;
+    max-width: 100%;
+    height: 100vh;
+    background: #fffaf5;
+    padding: 25px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: right 0.3s ease;
+}
+
+#cart.active {
+    right: 0;
+}
+
+#cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+#cart-overlay.active {
+    display: block;
+}
+
+#cart .cart-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#cart .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 10px 0;
+}
+
+#cart .quantity-btn,
+#cart .remove-btn,
+#checkout-btn {
+    cursor: pointer;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+}
+
+#checkout-btn {
+    width: 100%;
+    margin-top: 20px;
+    background: #8b4513;
+    color: white;
+    padding: 14px;
+}
+
+body.cart-open {
+    overflow: hidden;
+}
+
+#cart-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #8b4513;
+    color: white;
+    padding: 15px 22px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    opacity: 0;
+    transform: translateX(120%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+#cart-message.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ABOUT PAGE */
+
+.about-section {
+    padding: 60px 20px;
+    background: #fffaf5;
+    min-height: 400px;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-content h2 {
+    color: #8b4513;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.about-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 25px;
+    background: #8b4513;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.about-button:hover {
+    background: #63300e;
+}
+
+.about-footer {
+    text-align: center;
+    background: #4b2818;
+    color: white;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    .about-content {
+        padding: 25px 18px;
+    }
+
+    .about-content h2 {
+        font-size: 26px;
+    }
+
+    .about-content p {
+        font-size: 15px;
+    }
+}
+
+/* CONTACT PAGE */
+
+.contact-hero {
+    background: #f8e5d8;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.contact-hero h2 {
+    color: #8b4513;
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.contact-hero p {
+    color: #654536;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 25px;
+}
+
+.contact-info,
+.contact-form-container {
+    background: #fffaf5;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.contact-info h2,
+.contact-form-container h2 {
+    color: #8b4513;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.contact-note {
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form label {
+    margin: 12px 0 7px;
+    color: #4b2818;
+    font-weight: bold;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    border: 1px solid #decbbd;
+    border-radius: 7px;
+    font: inherit;
+    background: white;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: 2px solid #b77a52;
+    border-color: transparent;
+}
+
+#contact-form textarea {
+    resize: vertical;
+}
+
+#contact-form button {
+    margin-top: 22px;
+    padding: 14px;
+    background: #8b4513;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#contact-form button:hover {
+    background: #63300e;
+}
+
+#contact-status {
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        grid-template-columns: 1fr;
+        margin: 30px auto;
+        gap: 25px;
+    }
+
+    .contact-hero h2 {
+        font-size: 27px;
+    }
+
+    .contact-hero p {
+        font-size: 15px;
+    }
+}
+
+/* WhatsApp Contact Button */
+.whatsapp-button {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 14px 24px;
+    margin-top: 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    flex-shrink: 0;
+}
+
+.logo span {
+    white-space: nowrap;
+}
+
+/* AMIRA DELIGHTS - MOBILE RESPONSIVE DESIGN */
+
+@media screen and (max-width: 600px) {
+
+    /* Header */
+    header nav {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 10px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .logo img {
+        width: 65px;
+        height: 65px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    /* Hero section */
+    .hero {
+        flex-direction: column;
+        gap: 25px;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .hero-content h2 {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Featured cakes - one per row */
+    .cake-container,
+    .cakes-container,
+    .cake-grid,
+    .products-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .cake-card,
+    .product-card {
+        width: 100%;
+        max-width: 380px;
+        box-sizing: border-box;
+    }
+
+    /* Cake images */
+    .cake-card img,
+    .product-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    /* Cake text */
+    .cake-card h3,
+    .product-card h3 {
+        font-size: 22px;
+    }
+
+    .cake-card p,
+    .product-card p {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    .cake-card button,
+    .product-card button {
+        font-size: 17px;
+        padding: 12px 20px;
+    }
+
+    /* Section headings */
+    h2 {
+        font-size: 30px;
+    }
+}

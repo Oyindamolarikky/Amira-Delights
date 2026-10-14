@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amira Delights</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="image/logo.png" alt="Amira Delights">
+                <span>Amira Delights</span>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cakes.html">Cakes</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#cart">Cart 🛒 (<span id="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Baked With Love, Made To Delight</h2>
+            <p>Freshly baked cakes for every special moment.</p>
+
+            <a href="cakes.html">Shop Our Cakes</a>
+            <a href="contact.html">Custom Order</a>
+        </div>
+        <div class="hero-image">
+            <img src="image/cakes.jpeg" alt="Beautiful decorated cake"
+        </div>
+    </section>
+
+    <section class="featured-cakes">
+        <h2>Our Featured Cakes</h2>
+        <div class="cake-container">
+            <div class="cake-card">
+                <div class="cake-image">
+                    <img src="image/Birthday cake.webp" alt="Birthday cake">
+                </div>
+
+                <h3>Birthday cakes</h3>
+                <p>Beatifully decorated cakes for your special day</p>
+                <span>₦25,000</span>
+
+                <button class="add-to-cart" data-name="Birthday Cake" data-price="25000">Add to Cart</button>
+            </div>
+
+            <div class="cake-card">
+                <div class="cake-image">
+                    <img src="image/chocolate.jpeg" alt="Chocolate Cake">
+                </div>
+
+                <h3>Chocolate Cake</h3>
+                <p>Rich and delicious chocolate cake made with love.</p>
+                <span>₦20,000</span>
+
+                <button class="add-to-cart" data-name="Chocolate Cake" data-price="20000">Add to Cart</button>
+            </div>
+
+            <div class="cake-card">
+                <div class="cake-image">
+                    <img src="image/cup cake.jpeg" alt="Cupcakes">
+                </div>
+
+                <h3>Classic Cupcakes</h3>
+                <p>Soft, delicious cupcakes perfect for every occasion.</p>
+                <span>₦10,000</span>
+
+                <button class="add-to-cart" data-name="Classic Cupcakes" data-price="10000">Add to Cart</button>
+            </div>
+            
+        </div>
+
+    </section>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <section class="cart-section" id="cart">
+
+        <div class="cart-header">
+            <h2>Your Shopping Cart 🛒</h2>
+
+            <button id="close-cart" aria-label="Close shopping cart">
+                &times;
+            </button>
+        </div>
+
+        <div id="cart-items">
+            <p>Your cart is empty.</p>
+        </div>
+
+        <h3>Total: ₦<span id="cart-total">0</span></h3>
+
+        <button id="checkout-btn">Proceed to Checkout</button>
+
+    </section>
+<script src="script.js"></script>
+</body>
+</html>

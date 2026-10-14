@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Cakes | Amira Delights</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="cakes-nav">
+        <a href="index.html" class="logo">
+                <img src="image/logo.png" alt="Amira Delights">
+                <span>Amira Delights</span>
+        </a>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cakes.html" class="active">Cakes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li>
+                <a href="#" id="cakes-cart-link">
+                    Cart 🛒 (<span id="cakes-cart-count">0</span>)
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page Heading -->
+    <header class="cakes-hero">
+        <h2>Our Delicious Cakes</h2>
+        <p>Every cake is made with love, just for you. ❤️</p>
+    </header>
+
+    <!-- Cake Products -->
+    <main class="cakes-page">
+
+        <div class="cakes-grid">
+
+            <!-- Birthday Cake -->
+            <article class="product-card">
+                <img src="image/birth-cake.jpeg"
+                     alt="Beautiful birthday cake">
+
+                <div class="product-info">
+                    <h3>Birthday Cake</h3>
+                    <p>A beautiful cake for your special day.</p>
+                    <span class="product-price">₦25,000</span>
+
+                    <button class="add-to-cart"
+                            data-name="Birthday Cake"
+                            data-price="25000">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+            <!-- Chocolate Cake -->
+            <article class="product-card">
+                <img src="image/Chocolate-Cake-2.webp"
+                     alt="Rich chocolate cake">
+
+                <div class="product-info">
+                    <h3>Chocolate Cake</h3>
+                    <p>A rich, chocolatey treat for every occasion.</p>
+                    <span class="product-price">₦20,000</span>
+
+                    <button class="add-to-cart"
+                            data-name="Chocolate Cake"
+                            data-price="20000">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+            <!-- Cupcakes -->
+            <article class="product-card">
+                <img src="image/cupcake.jpeg"
+                     alt="Delicious decorated cupcakes">
+
+                <div class="product-info">
+                    <h3>Classic Cupcakes</h3>
+                    <p>Small treats with a big taste.</p>
+                    <span class="product-price">₦10,000</span>
+
+                    <button class="add-to-cart"
+                            data-name="Classic Cupcakes"
+                            data-price="10000">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+            <!-- Wedding Cake -->
+            <article class="product-card">
+                <img src="image/wedding cake.jpeg"
+                     alt="Elegant wedding cake">
+
+                <div class="product-info">
+                    <h3>Wedding Cake</h3>
+                    <p>An elegant centrepiece for your big day.</p>
+                    <span class="product-price">₦80,000</span>
+
+                    <button class="add-to-cart"
+                            data-name="Wedding Cake"
+                            data-price="80000">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+            <!-- Red Velvet Cake -->
+            <article class="product-card">
+                <img src="image/redvelvet.jpeg"
+                     alt="Red velvet cake">
+
+                <div class="product-info">
+                    <h3>Red Velvet Cake</h3>
+                    <p>A soft, velvety cake with a delicious finish.</p>
+                    <span class="product-price">₦22,000</span>
+
+                    <button class="add-to-cart"
+                            data-name="Red Velvet Cake"
+                            data-price="22000">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+            <!-- Vanilla Cake -->
+            <article class="product-card">
+                <img src="image/vanilla.jpeg"
+                     alt="Classic vanilla cake">
+
+                <div class="product-info">
+                    <h3>Vanilla Cake</h3>
+                    <p>A timeless favourite with a lovely vanilla flavour.</p>
+                    <span class="product-price">₦18,000</span>
+
+                    <button class="add-to-cart"
+                            data-name="Vanilla Cake"
+                            data-price="18000">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+        </div>
+
+    </main>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <section class="cart" id="cart">
+        <button id="close-cart" class="close-cart">&times;</button>
+
+        <h2>Your Shopping Cart 🛒</h2>
+
+        <div id="cart-items"></div>
+
+        <h3>Total: ₦<span id="cart-total">0</span></h3>
+
+        <button id="checkout-btn">Proceed to Checkout</button>
+    </section>
+
+    <script src="cakes.js"></script>
+
+</body>
+</html>
